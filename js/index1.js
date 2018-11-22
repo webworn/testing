@@ -37,7 +37,13 @@ function showLocation(position) {
 
 }
 
-
+function errorHandler(err) {
+    if (err.code == 1) {
+        alert("Error: Access is denied!");
+    } else if (err.code == 2) {
+        alert("Error: Position is unavailable!");
+    }
+}
 
 function getLocationUpdate() {
 
@@ -46,7 +52,7 @@ function getLocationUpdate() {
         // timeout at 60000 milliseconds (60 seconds)
         var options = { timeout: 20000 };
         geoLoc = navigator.geolocation;
-        watchID = geoLoc.watchPosition(showLocation, options);
+        watchID = geoLoc.watchPosition(showLocation, errorHandler, options);
     }
     else {
         alert("Sorry, browser does not support geolocation!");
