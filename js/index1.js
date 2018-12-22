@@ -33,6 +33,7 @@ function showLocation(position) {
         "geometry": { "type": "Point", "coordinates": [longitude, latitude] }, "type": "Feature", "properties": {}
         
     });
+    firebasedata.child('ac1/bus1/geometry/coordinates').remove();
     
 
 }
