@@ -12,6 +12,7 @@ var watchID;
 var geoLoc;
 
 
+
 function toggle(input) {
     if (input.value == "OFF") {
         stopWatch();
@@ -25,19 +26,34 @@ function toggle(input) {
 }
 
 
+
 function showLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     var accuracy = position.coords.accuracy;
-    firebasedata.child('ac1/bus1/geometry/coordinates').remove();
+    //setInterval(function () { alert("Hello"); }, 3000);
     firebasedata.child('ac1/bus1').set({
-        "geometry": { "type": "Point", "coordinates": [longitude, latitude] }, "type": "Feature", "properties": {}
+        //"geometry": { "type": "Point", "coordinates": [longitude, latitude] }, "type": "Feature", "properties": {}
         
     });
-    
+    firebasedata.child('ac1/bus1').update({
+        "geometry": { "type": "Point", "coordinates": [longitude, latitude] }, "type": "Feature", "properties": {}
+
+    });
+    //callingfunction(latitude, longitude);
     
 
 }
+/*function callingfunction(a1,a2) {
+    firebasedata.child('ac1/bus1').update({
+        "geometry": { "type": "Point", "coordinates": [a2, a1] }, "type": "Feature", "properties": {}
+
+    });
+    firebasedata.child('ac1/bus1/geometry/coordinates').remove();
+    
+}*/
+
+
 
 function errorHandler(err) {
     if (err.code == 1) {
