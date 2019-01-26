@@ -33,14 +33,13 @@ function showLocation(position) {
     var accuracy = position.coords.accuracy;
     //setInterval(function () { alert("Hello"); }, 3000);
  
-    setInterval(function () { 
+ 
         
-        firebasedata.child('route/14').push(
+    firebasedata.child('route/14').push(
          [longitude, latitude]
     ); 
     
-    
-    }, 3000);
+ 
     
 
 
