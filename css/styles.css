@@ -68,11 +68,11 @@
 
 .maplayout{
   
-  padding: 25px 50px;
+  padding: 10px 10px;
   width: auto; 
   height: 500px; 
   right:0%;
-  background: rgb(66, 66, 66)
+  background: rgb(230, 224, 224)
 
 }
 #mapid{
