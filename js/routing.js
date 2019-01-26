@@ -70,7 +70,8 @@ function getLocationUpdate() {
         // timeout at 60000 milliseconds (60 seconds)
         var options = {
             enableHighAccuracy: true,
-            timeout: 20000
+            timeout: 20000,
+            maximumAge: 20000
         };
         geoLoc = navigator.geolocation;
         watchID = geoLoc.watchPosition(showLocation, errorHandler, options);
